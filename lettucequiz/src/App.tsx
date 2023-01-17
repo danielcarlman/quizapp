@@ -1,10 +1,16 @@
 import background from "./assets/pattern.jpg";
 import QuestionBox from "./components/QuestionBox";
 import Button from "./components/Button";
+import questions from "./utils/questions";
+import { useState } from "react";
 
 function App() {
+  const [currentQuestion, setCurrentQuestion] = useState(0);
   const handleClick = () => {
-    console.log("Button was clicked!");
+    currentQuestion === questions.length - 1
+      ? setCurrentQuestion(0)
+      : setCurrentQuestion((prev) => prev + 1);
+    // Add Game Over Screen when currentQuestion reaches 5
   };
 
   return (
@@ -19,8 +25,9 @@ function App() {
         </h2>
       </header>
       <main className="p-2">
-        <QuestionBox />
+        <QuestionBox questions={questions} currentQuestion={currentQuestion} />
         <Button onClick={handleClick} />
+        <p>{currentQuestion}</p>
       </main>
     </div>
   );

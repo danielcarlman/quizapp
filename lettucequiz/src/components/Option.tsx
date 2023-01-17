@@ -1,9 +1,10 @@
 interface Option {
   id: number;
   value: string;
+  points: any;
 }
 
-function Option({ id, value }: Option) {
+function Option({ id, value, points }: Option) {
   return (
     <span className="flex space-x-2">
       <input
@@ -13,6 +14,7 @@ function Option({ id, value }: Option) {
         name="option"
       />
       <p>{value}</p>
+      <p>{points}</p>
     </span>
   );
 }
