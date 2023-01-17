@@ -3,6 +3,10 @@ import QuestionBox from "./components/QuestionBox";
 import Button from "./components/Button";
 
 function App() {
+  const handleClick = () => {
+    console.log("Button was clicked!");
+  };
+
   return (
     <div
       className="flex flex-col justify-center items-center text-center h-screen bg-cover p-8 space-y-8"
@@ -16,7 +20,7 @@ function App() {
       </header>
       <main className="p-2">
         <QuestionBox />
-        <Button />
+        <Button onClick={handleClick} />
       </main>
     </div>
   );
