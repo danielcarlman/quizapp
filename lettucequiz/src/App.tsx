@@ -1,9 +1,7 @@
-import "./App.css";
-
 function App() {
   return (
-    <div className="App">
-      <h1>Test</h1>
+    <div className="flex justify-center items-center h-screen">
+      <h1 className="text-3xl font-bold">Lettuce Feed Quiz</h1>
     </div>
   );
 }
