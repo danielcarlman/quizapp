@@ -16,10 +16,10 @@ function QuestionBox({ questions, currentQuestion }: QuestionBox) {
         </h3>
       </>
       <div className="flex flex-col text-left p-8 space-y-2">
-        <Option id={1} value={keys[0]} points={values[0]} />
-        <Option id={2} value={keys[1]} points={values[1]} />
-        <Option id={3} value={keys[2]} points={values[2]} />
-        <Option id={4} value={keys[3]} points={values[3]} />
+        <Option value={keys[0]} points={values[0]} />
+        <Option value={keys[1]} points={values[1]} />
+        <Option value={keys[2]} points={values[2]} />
+        <Option value={keys[3]} points={values[3]} />
       </div>
     </div>
   );
