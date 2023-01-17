@@ -2,7 +2,7 @@ import Option from "./Option";
 
 function QuestionBox() {
   return (
-    <div className="border-4 border-slate-400 solid bg-white p-4 divide-y-4 divide-slate-400 space-y-4">
+    <div className="relative border-4 border-cadetblue solid bg-white p-4 divide-y-4 divide-cadetblue space-y-4">
       <>
         <h3 className="text-xl font-semibold">
           PICK A CITY YOU WOULD LIKE TO JET OFF TO
