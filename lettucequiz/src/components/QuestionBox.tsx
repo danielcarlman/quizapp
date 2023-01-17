@@ -20,7 +20,7 @@ function QuestionBox() {
           <input
             className="w-6 h-6"
             type="radio"
-            value="option 1"
+            value="option 2"
             name="option"
           />
           <p>paris</p>
@@ -29,7 +29,7 @@ function QuestionBox() {
           <input
             className="w-6 h-6"
             type="radio"
-            value="option 1"
+            value="option 3"
             name="option"
           />
           <p>los angeles</p>
@@ -38,7 +38,7 @@ function QuestionBox() {
           <input
             className="w-6 h-6"
             type="radio"
-            value="option 1"
+            value="option 4"
             name="option"
           />
           <p>nashville</p>
