@@ -1,16 +1,22 @@
 import background from "./assets/pattern.jpg";
+import QuestionBox from "./components/QuestionBox";
 
 function App() {
   return (
-    <header
-      className="flex flex-col justify-center items-center h-screen bg-cover p-4 space-y-4"
+    <div
+      className="flex flex-col justify-center items-center text-center h-screen bg-cover p-8 space-y-8"
       style={{ backgroundImage: `url(${background})` }}
     >
-      <h1 className="text-6xl font-bold tracking-widest">QUIZ</h1>
-      <h1 className="text-xl text-center">
-        Take our quiz to find out what restaurant you should try for dinner.
-      </h1>
-    </header>
+      <header className="space-y-4">
+        <h1 className="text-6xl font-bold tracking-widest">QUIZ</h1>
+        <h2 className="text-xl">
+          Take our restaurant quiz to find out what you should have for dinner.
+        </h2>
+      </header>
+      <main className="p-2">
+        <QuestionBox />
+      </main>
+    </div>
   );
 }
 
