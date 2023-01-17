@@ -1,7 +1,12 @@
+import background from "./assets/pattern.jpg";
+
 function App() {
   return (
-    <div className="flex justify-center items-center h-screen">
-      <h1 className="text-3xl font-bold">Lettuce Feed Quiz</h1>
+    <div
+      className="flex justify-center items-center h-screen bg-cover"
+      style={{ backgroundImage: `url(${background})` }}
+    >
+      <h1 className="text-4xl font-bold">Lettuce Feed Quiz</h1>
     </div>
   );
 }
