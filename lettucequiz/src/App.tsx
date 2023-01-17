@@ -1,5 +1,6 @@
 import background from "./assets/pattern.jpg";
 import QuestionBox from "./components/QuestionBox";
+import Button from "./components/Button";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       </header>
       <main className="p-2">
         <QuestionBox />
+        <Button />
       </main>
     </div>
   );
