@@ -17,7 +17,7 @@ function App() {
     currentQuestion === questions.length - 1
       ? setCurrentQuestion(0)
       : setCurrentQuestion((prev) => prev + 1);
-    // Add Game Over Screen when currentQuestion reaches 5
+    // Add Result Screen when currentQuestion reaches max
   };
 
   return (
