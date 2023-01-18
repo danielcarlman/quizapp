@@ -1,4 +1,3 @@
-import { useState } from "react";
 import useStore from "../store/store";
 
 interface OptionProps {
@@ -7,10 +6,9 @@ interface OptionProps {
 }
 
 function Option({ value, points }: OptionProps) {
-  const [checkedValue, setCheckedValue] = useState("");
   const setPoints = useStore((state) => state.setPoints);
-  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCheckedValue(event.target.value);
+  const handleOnChange = () => {
+    console.log(value);
     setPoints(points);
   };
 
@@ -20,7 +18,6 @@ function Option({ value, points }: OptionProps) {
         className="w-6 h-6"
         type="radio"
         value={value}
-        checked={checkedValue === value}
         name="option"
         onChange={handleOnChange}
       />
