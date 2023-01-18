@@ -29,8 +29,11 @@ function App() {
         <h1 className="text-6xl font-bold tracking-widest">
           QUIZ {totalPoints}
         </h1>
-        <h2 className="text-xl">
-          Take our restaurant quiz to find out what you should have for dinner.
+        <h2 className="text-medium">
+          Take our restaurant quiz to
+          <br />
+          find out where you
+          <br /> should go for dinner.
         </h2>
       </header>
       <main className="p-2">
