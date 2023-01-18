@@ -7,11 +7,13 @@ import useStore from "./store/store";
 
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const totalPoints = useStore((state) => state.totalPoints);
   const points = useStore((state) => state.points);
+  const setPoints = useStore((state) => state.setPoints);
+  const totalPoints = useStore((state) => state.totalPoints);
   const incrementTotalPoints = useStore((state) => state.incrementTotalPoints);
   const handleClick = () => {
     incrementTotalPoints(points);
+    setPoints(0);
     console.log("TOTAL POINTS: ", totalPoints);
     currentQuestion === questions.length - 1
       ? setCurrentQuestion(0)
