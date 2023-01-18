@@ -7,6 +7,7 @@ import useStore from "./store/store";
 
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [showResults, setShowResults] = useState(false);
   const points = useStore((state) => state.points);
   const setPoints = useStore((state) => state.setPoints);
   const totalPoints = useStore((state) => state.totalPoints);
@@ -15,7 +16,7 @@ function App() {
     incrementTotalPoints(points);
     setPoints(0);
     currentQuestion === questions.length - 1
-      ? setCurrentQuestion(0)
+      ? setShowResults(true)
       : setCurrentQuestion((prev) => prev + 1);
     // Add Result Screen when currentQuestion reaches max
   };
@@ -27,9 +28,9 @@ function App() {
     >
       <header className="space-y-4">
         <h1 className="text-6xl font-bold tracking-widest">
-          QUIZ {totalPoints}
+          {showResults ? `Result: ${totalPoints} points` : "QUIZ"}
         </h1>
-        <h2 className="text-medium">
+        <h2 className={`text-medium ${showResults ? "hidden" : ""}`}>
           Take our restaurant quiz to
           <br />
           find out where you
@@ -37,9 +38,17 @@ function App() {
         </h2>
       </header>
       <main className="p-2">
-        <QuestionBox questions={questions} currentQuestion={currentQuestion} />
-        <Button onClick={handleClick} disabled={points < 1} />
-        <p>{currentQuestion}</p>
+        {showResults ? (
+          "Calculate Results here"
+        ) : (
+          <>
+            <QuestionBox
+              questions={questions}
+              currentQuestion={currentQuestion}
+            />
+            <Button onClick={handleClick} disabled={points < 1} />
+          </>
+        )}
       </main>
     </div>
   );
