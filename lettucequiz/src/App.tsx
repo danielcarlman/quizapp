@@ -14,7 +14,6 @@ function App() {
   const handleClick = () => {
     incrementTotalPoints(points);
     setPoints(0);
-    console.log("TOTAL POINTS: ", totalPoints);
     currentQuestion === questions.length - 1
       ? setCurrentQuestion(0)
       : setCurrentQuestion((prev) => prev + 1);
