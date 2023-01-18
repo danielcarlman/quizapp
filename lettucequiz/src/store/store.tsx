@@ -9,10 +9,10 @@ interface StoreInterface {
 
 const useStore = create<StoreInterface>((set) => ({
   points: 0,
-  setPoints: (input) => set(() => ({ points: input })),
   totalPoints: 0,
-  incrementTotalPoints: (input) =>
-    set((state) => ({ totalPoints: state.totalPoints + input })),
+  setPoints: (points: number) => set((state) => ({ ...state, points })),
+  incrementTotalPoints: (increment: number) =>
+    set((state) => ({ ...state, totalPoints: state.totalPoints + increment })),
 }));
 
 export default useStore;
