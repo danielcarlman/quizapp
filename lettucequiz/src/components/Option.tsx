@@ -1,23 +1,21 @@
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import useStore from "../store/store";
 
-interface Option {
+interface OptionProps {
   value: string;
   points: any;
 }
 
-function Option({ value, points }: Option) {
-  const [checkedValue, setcheckedValue] = useState("");
+function Option({ value, points }: OptionProps) {
+  const [checkedValue, setCheckedValue] = useState("");
   const setPoints = useStore((state) => state.setPoints);
-  const handleOnChange = (event: {
-    target: { value: SetStateAction<string> };
-  }) => {
-    setcheckedValue(event.target.value);
+  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCheckedValue(event.target.value);
     setPoints(points);
   };
 
   return (
-    <span className="flex space-x-2">
+    <label className="flex space-x-2">
       <input
         className="w-6 h-6"
         type="radio"
@@ -26,9 +24,9 @@ function Option({ value, points }: Option) {
         name="option"
         onChange={handleOnChange}
       />
-      <p>{value}</p>
-      <p>{points}</p>
-    </span>
+      <span>{value}</span>
+      <span>{points}</span>
+    </label>
   );
 }
 
