@@ -36,7 +36,7 @@ function App() {
       </header>
       <main className="p-2">
         <QuestionBox questions={questions} currentQuestion={currentQuestion} />
-        <Button onClick={handleClick} />
+        <Button onClick={handleClick} disabled={points < 1} />
         <p>{currentQuestion}</p>
       </main>
     </div>
