@@ -1,3 +1,4 @@
+import { SetStateAction, useState } from "react";
 import useStore from "../store/store";
 
 interface Option {
@@ -6,8 +7,12 @@ interface Option {
 }
 
 function Option({ value, points }: Option) {
+  const [checkedValue, setcheckedValue] = useState("");
   const setPoints = useStore((state) => state.setPoints);
-  const handleOnChange = () => {
+  const handleOnChange = (event: {
+    target: { value: SetStateAction<string> };
+  }) => {
+    setcheckedValue(event.target.value);
     setPoints(points);
   };
 
@@ -16,6 +21,8 @@ function Option({ value, points }: Option) {
       <input
         className="w-6 h-6"
         type="radio"
+        value={value}
+        checked={checkedValue === value}
         name="option"
         onChange={handleOnChange}
       />
