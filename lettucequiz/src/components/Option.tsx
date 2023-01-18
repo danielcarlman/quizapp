@@ -1,3 +1,5 @@
+import useStore from "../store/store";
+
 interface Option {
   value: string;
   points: any;
@@ -5,9 +7,11 @@ interface Option {
 }
 
 function Option({ value, points, id }: Option) {
+  const setPoints = useStore((state) => state.setPoints);
   const handleOnChange = () => {
-    console.log("ID :", id);
-    console.log("Points :", points);
+    // console.log("ID :", id);
+    // console.log("Points :", points);
+    setPoints(points);
   };
 
   return (

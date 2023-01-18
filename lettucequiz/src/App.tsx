@@ -3,10 +3,16 @@ import QuestionBox from "./components/QuestionBox";
 import Button from "./components/Button";
 import questions from "./utils/questions";
 import { useState } from "react";
+import useStore from "./store/store";
 
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const totalPoints = useStore((state) => state.totalPoints);
+  const points = useStore((state) => state.points);
+  const incrementTotalPoints = useStore((state) => state.incrementTotalPoints);
   const handleClick = () => {
+    incrementTotalPoints(points);
+    console.log("TOTAL POINTS: ", totalPoints);
     currentQuestion === questions.length - 1
       ? setCurrentQuestion(0)
       : setCurrentQuestion((prev) => prev + 1);
@@ -19,7 +25,9 @@ function App() {
       style={{ backgroundImage: `url(${background})` }}
     >
       <header className="space-y-4">
-        <h1 className="text-6xl font-bold tracking-widest">QUIZ</h1>
+        <h1 className="text-6xl font-bold tracking-widest">
+          QUIZ {totalPoints}
+        </h1>
         <h2 className="text-xl">
           Take our restaurant quiz to find out what you should have for dinner.
         </h2>
