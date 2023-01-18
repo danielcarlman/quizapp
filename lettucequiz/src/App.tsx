@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div
-      className="flex flex-col justify-center items-center text-center h-screen bg-cover p-8 space-y-8"
+      className="flex flex-col justify-center items-center text-center h-screen bg-cover p-8 space-y-8 text-raisinblack"
       style={{ backgroundImage: `url(${background})` }}
     >
       <header className="space-y-4">
