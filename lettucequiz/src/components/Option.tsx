@@ -24,7 +24,7 @@ function Option({ value, points }: OptionProps) {
         name="option"
         onChange={handleOnChange}
       />
-      <span>{value}</span>
+      <span>{value.toLowerCase()}</span>
       <span>{points}</span>
     </label>
   );
