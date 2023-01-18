@@ -8,7 +8,6 @@ interface OptionProps {
 function Option({ value, points }: OptionProps) {
   const setPoints = useStore((state) => state.setPoints);
   const handleOnChange = () => {
-    console.log(value);
     setPoints(points);
   };
 
