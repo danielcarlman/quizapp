@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div
-      className="flex flex-col items-center text-center h-screen bg-cover p-8 pt-24 pl-4 space-y-8 text-raisinblack"
+      className="flex flex-col items-center text-center h-screen bg-cover p-8 pt-16 pl-4 space-y-8 text-raisinblack"
       style={{ backgroundImage: `url(${background})` }}
     >
       <header className="space-y-4">
