@@ -10,7 +10,9 @@ function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showResults, setShowResults] = useState(false);
   const points = useStore((state) => state.points);
+  const totalPoints = useStore((state) => state.totalPoints);
   const setPoints = useStore((state) => state.setPoints);
+  const resetTotalPoints = useStore((state) => state.resetTotalPoints);
   const incrementTotalPoints = useStore((state) => state.incrementTotalPoints);
   const handleClick = () => {
     incrementTotalPoints(points);
@@ -19,6 +21,12 @@ function App() {
       ? setShowResults(true)
       : setCurrentQuestion((prev) => prev + 1);
     // Add Result Screen when currentQuestion reaches max
+  };
+
+  const handleRestart = () => {
+    resetTotalPoints();
+    setCurrentQuestion(0);
+    setShowResults(false);
   };
 
   return (
@@ -45,7 +53,7 @@ function App() {
         {showResults ? (
           <>
             <Results />
-            <Button title="RESTART QUIZ" onClick={handleClick} />
+            <Button title="RESTART QUIZ" onClick={handleRestart} />
           </>
         ) : (
           <>
