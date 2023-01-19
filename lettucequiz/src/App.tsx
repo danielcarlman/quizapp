@@ -4,12 +4,13 @@ import Button from "./components/Button";
 import questions from "./utils/questions";
 import { useState } from "react";
 import useStore from "./store/store";
-import Results from "./components/Results";
+import ResultBox from "./components/ResultBox";
 
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showResults, setShowResults] = useState(false);
   const points = useStore((state) => state.points);
+  const totalPoints = useStore((state) => state.totalPoints);
   const setPoints = useStore((state) => state.setPoints);
   const resetTotalPoints = useStore((state) => state.resetTotalPoints);
   const incrementTotalPoints = useStore((state) => state.incrementTotalPoints);
@@ -50,7 +51,7 @@ function App() {
       <main className="p-2">
         {showResults ? (
           <>
-            <Results />
+            <ResultBox />
             <Button title="RESTART QUIZ" onClick={handleRestart} />
           </>
         ) : (
