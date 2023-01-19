@@ -9,7 +9,7 @@ export default function rubric(totalPoints: number) {
       restaurant: "RPM Seafood",
       image: rpmseafood,
       description:
-        "This is the definition of high-class dining experience. One of our best restaurants features prawns, shrimps and pretty much all great creatures from under the sea!",
+        "RPM Seafood is a dramatic multi-level restaurant overlooking the Chicago River featuring the truest expression of the world’s best fish and seafood.",
     };
 
   if (totalPoints > 16)
@@ -17,7 +17,7 @@ export default function rubric(totalPoints: number) {
       restaurant: "Hub 51",
       image: hub51,
       description:
-        "This is the greatest Pub Restaurant ever in the world. Such an incredible experience dining here. Feel free to bring your family and have fun under the sun!",
+        "From the best nachos in Chicago to sushi, burgers, tacos and craft beers, we are River North’s go-to spot for lunch, dinner, weekend brunch and late-night eats.",
     };
 
   if (totalPoints > 10)
@@ -25,13 +25,13 @@ export default function rubric(totalPoints: number) {
       restaurant: "Beatrix",
       image: beatrix,
       description:
-        "This is the greatest Casual Beat Restaurant ever in the world. Such an incredible experience dining here. Feel free to bring your friends and guest and have great party!",
+        "Beatrix is a neighborhood coffeehouse, restaurant and meeting place in many of Chicago's neighborhoods. It is the ultimate destination in the city.",
     };
 
   return {
-    restaurant: "Tall Boy",
+    restaurant: "Tall Boy Taco",
     image: tallboy,
     description:
-      "This is the greatest Restaurant for Tacos ever in the world. Such an incredible authentic Mexican here. Feel free to bring your friends and guests. Gracias!",
+      "Tallboy Taco offers a menu inspired by fresh and simple ingredients. Tacos served on hand-pressed corn tortillas. It includes all-day breakfast options.",
   };
 }
