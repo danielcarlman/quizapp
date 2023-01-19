@@ -12,7 +12,7 @@ function QuestionBox({ questions, currentQuestion }: QuestionBoxProps) {
       <h3 className="text-xl font-semibold tracking-widest uppercase">
         {questions[currentQuestion].question}
       </h3>
-      <div className="flex flex-col text-left p-8 pl-4 space-y-2 tracking-wide">
+      <div className="flex flex-col text-left p-8 pl-4 space-y-3 tracking-wide">
         {Object.entries(entries).map(([key, value]) => (
           <Option key={key} value={key} points={value} />
         ))}
