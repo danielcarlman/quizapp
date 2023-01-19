@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div
-      className="flex flex-col items-center text-center h-screen bg-cover p-8 pt-16 pl-4 space-y-8 text-raisinblack"
+      className="flex flex-col items-center text-center h-screen bg-cover p-8 pt-24 pl-4 space-y-8 text-raisinblack"
       style={{ backgroundImage: `url(${background})` }}
     >
       <header className="space-y-4">
@@ -52,7 +52,7 @@ function App() {
           Take our restaurant quiz to find out where you should go for dinner.
         </p>
       </header>
-      <main className="flex flex-col justify-end items-center grow p-2 w-full max-w-md">
+      <main className="flex flex-col justify-end items-center p-2 w-full max-w-xl">
         {showResults ? (
           <>
             <ResultBox />
