@@ -24,7 +24,6 @@ function Option({ value, points }: OptionProps) {
       />
       <span className="field-circle" />
       <span className="lowercase">{value}</span>
-      <span>{points}</span>
     </label>
   );
 }
