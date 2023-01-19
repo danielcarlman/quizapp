@@ -4,13 +4,13 @@ import Button from "./components/Button";
 import questions from "./utils/questions";
 import { useState } from "react";
 import useStore from "./store/store";
+import Results from "./components/Results";
 
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showResults, setShowResults] = useState(false);
   const points = useStore((state) => state.points);
   const setPoints = useStore((state) => state.setPoints);
-  const totalPoints = useStore((state) => state.totalPoints);
   const incrementTotalPoints = useStore((state) => state.incrementTotalPoints);
   const handleClick = () => {
     incrementTotalPoints(points);
@@ -27,10 +27,14 @@ function App() {
       style={{ backgroundImage: `url(${background})` }}
     >
       <header className="space-y-4">
-        <h1 className="text-6xl font-bold tracking-widest">
-          {showResults ? `Result: ${totalPoints} points` : "QUIZ"}
+        <h1
+          className={`font-bold tracking-widest ${
+            showResults ? "text-4xl" : "text-6xl"
+          }`}
+        >
+          {showResults ? "RESULT" : "QUIZ"}
         </h1>
-        <h2 className={`text-medium ${showResults ? "hidden" : ""}`}>
+        <h2 className={`text-medium ${showResults && "hidden"}`}>
           Take our restaurant quiz to
           <br />
           find out where you
@@ -39,14 +43,21 @@ function App() {
       </header>
       <main className="p-2">
         {showResults ? (
-          "Calculate Results here"
+          <>
+            <Results />
+            <Button title="RESTART QUIZ" onClick={handleClick} />
+          </>
         ) : (
           <>
             <QuestionBox
               questions={questions}
               currentQuestion={currentQuestion}
             />
-            <Button onClick={handleClick} disabled={points < 1} />
+            <Button
+              title="NEXT QUESTION"
+              onClick={handleClick}
+              disabled={points < 1}
+            />
           </>
         )}
       </main>

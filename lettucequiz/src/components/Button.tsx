@@ -1,9 +1,10 @@
 interface ButtonInterface {
-  disabled: boolean;
+  disabled?: boolean;
   onClick: () => void;
+  title: string;
 }
 
-function Button({ onClick, disabled }: ButtonInterface) {
+function Button({ onClick, disabled, title }: ButtonInterface) {
   return (
     <button
       onClick={onClick}
@@ -13,7 +14,7 @@ function Button({ onClick, disabled }: ButtonInterface) {
         disabled ? "bg-gray-200 text-gray-400" : "bg-cadetblue text-raisinblack"
       }`}
     >
-      <p>NEXT QUESTION</p>
+      <p>{title}</p>
     </button>
   );
 }
