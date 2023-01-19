@@ -44,7 +44,11 @@ function App() {
         >
           {showResults ? "Result" : "Quiz"}
         </h1>
-        <p className={`m-auto w-60 text-medium ${showResults && "hidden"}`}>
+        <p
+          className={`m-auto w-60 font-medium text-medium ${
+            showResults && "hidden"
+          }`}
+        >
           Take our restaurant quiz to find out where you should go for dinner.
         </p>
       </header>
