@@ -7,8 +7,7 @@ This app was created using:
 - React
 - TypeScript
 - Vite
-- CSS
-- TailwindCSS
+- CSS / TailwindCSS
 - Zustand
 
 To install the dependencies, type the following command in your terminal:
